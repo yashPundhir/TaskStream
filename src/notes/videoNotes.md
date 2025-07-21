@@ -1,0 +1,3 @@
+- mega project video 1:
+  - 04:18 to 11: 00 => deployment basics
+  - 15:00 => start of project
