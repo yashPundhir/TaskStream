@@ -1,3 +1,4 @@
 - mega project video 1:
   - 04:18 to 11: 00 => deployment basics
   - 15:00 => start of project
+  - 01:50:16 to 02:01:00 => start of discussion b/w instructors (imp for new explorable topics)
