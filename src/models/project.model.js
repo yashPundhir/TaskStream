@@ -6,6 +6,10 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    assignee: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true },
 );
