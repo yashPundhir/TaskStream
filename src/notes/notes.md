@@ -21,3 +21,7 @@ dotenv.config({
 as shown in the above code snippet, always give the path value wrt root folder and not wrt relative path.
 
 Ex: my file is inside the src folder, so relative path would be `../.env`, but it won't work. But if u give path wrt root folder like this: `./.env`, then it will work.
+
+---
+
+during the DB Schema, if for a field we specify that field to unique, then there is no need for that field to ne indexable => `verify this fact`
