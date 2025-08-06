@@ -14,3 +14,5 @@ export const taskStatusEnum = {
 };
 
 export const availableTaskStatuses = Object.values(taskStatusEnum);
+
+export const defaultPlaceholderAvatarUrl = "https://i.pravatar.cc/300";
