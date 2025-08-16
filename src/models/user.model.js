@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 import { defaultPlaceholderAvatarUrl } from "../constants/constants";
 
 const userSchema = new mongoose.Schema(
