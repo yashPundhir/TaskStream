@@ -4,6 +4,8 @@ import bcrypt from "bcryptjs";
 
 import jwt from "jsonwebtoken";
 
+import crypto from "crypto";
+
 import { defaultPlaceholderAvatarUrl } from "../constants/constants";
 
 const userSchema = new mongoose.Schema(
@@ -73,12 +75,14 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+/*
+During schema creation, we add readable prop to the schema, but here we are adding methods to the schema to perform specific functionality
+*/
 userSchema.methods.isPasswordCorrect = async function (password) {
-  console.log(password === this.password);
   return await bcrypt.compare(password, this.password);
 };
 
-userSchema.methods.generateAccessToken = async function () {
+userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
       _id: this._id,
@@ -91,7 +95,7 @@ userSchema.methods.generateAccessToken = async function () {
   );
 };
 
-userSchema.methods.generateRefreshToken = async function () {
+userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {
       _id: this._id,
@@ -101,6 +105,19 @@ userSchema.methods.generateRefreshToken = async function () {
       expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
     },
   );
+};
+
+userSchema.methods.generateTemporaryToken = function () {
+  const unHashedToken = crypto.randomBytes(20).toString("hex");
+
+  const hashedToken = crypto
+    .createHash("sha256")
+    .update(unHashedToken)
+    .digest("hex");
+
+  const tokenExpiry = Date.now() + 20 * 60 * 1000;
+
+  return { unHashedToken, hashedToken, tokenExpiry };
 };
 
 export const User = mongoose.model("User", userSchema);
