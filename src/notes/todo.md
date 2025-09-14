@@ -1,0 +1,1 @@
+- in mongoose docs, read about `required` for a field
