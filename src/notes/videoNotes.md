@@ -8,4 +8,5 @@
     - make DB schema of all the dummy projects whose DB design is done in the prev video.
 
 - Building mega backend project 2:
-  - continue watching from 21:20
+  - Imp life lesson: 00:00:00 to 00:28:12
+  - class start from: 00:28:15 => start from here tomorrow
