@@ -138,3 +138,5 @@ Below is the same idea with the important details, in plain language.
 - **Refresh token**: long-lived key used only to get new access tokens — keep it extra safe.
 
 ---
+
+## have a custom domain and host your project using that domain and it will give extra edge over others
