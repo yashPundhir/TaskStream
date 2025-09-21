@@ -140,3 +140,128 @@ Below is the same idea with the important details, in plain language.
 ---
 
 ## have a custom domain and host your project using that domain and it will give extra edge over others
+
+## most common port number for mongoDB database: `27017`
+
+---
+
+## Ques: what does ports in a computer actually means and what does they do, what problem do they solve and it is said that when any service runs in our computer it is served at a route: what does this mean?
+
+## ans: What are ports in a computer?
+
+- Think of your **computer like a big apartment building** (the machine).
+- Inside it, many different "services" (programs/servers) can be running at the same time.
+- A **port** is like an **apartment number** that helps identify which service inside the building you want to talk to.
+
+👉 Example:
+
+- The building = Your computer (IP address identifies it).
+- Apartment 80 = The web server (HTTP).
+- Apartment 443 = The secure web server (HTTPS).
+- Apartment 3306 = MySQL database.
+
+Without ports, if someone tried to contact your computer, the system wouldn’t know _which program_ should handle the request.
+
+---
+
+## 🔹 What do ports actually do?
+
+Ports solve the **problem of multiple services running on one machine**.
+They make sure incoming network traffic is directed to the correct process/program.
+
+- If you open your browser and visit `http://example.com`, by default it talks to **port 80** on that server (the web server process listens there).
+- If you connect to `example.com:3306`, you’re asking to connect to the database service running on that port.
+
+So, **ports = addressing system for services**.
+
+---
+
+## 🔹 What does “a service runs at a route” mean?
+
+When we say _“a service runs at a route”_, it usually refers to **web applications**.
+
+- **Port** tells which service you want to reach (like "which apartment").
+- **Route (or path)** tells what specific function or resource you want inside that service (like "which room inside the apartment").
+
+👉 Example:
+
+- You run an Express.js server on **port 8000**.
+- The server defines routes like:
+
+  - `/api/v1/health` → Health check route
+  - `/api/v1/users` → Users list route
+
+If you visit:
+
+- `http://localhost:8000/api/v1/health`
+
+  - Computer checks **port 8000** → finds your server → server checks the **route `/api/v1/health`** → returns the health status.
+
+---
+
+## 🔹 Why is this needed?
+
+- Without **ports**, you couldn’t run multiple services on the same computer. (Web server, database, chat server, all need unique ports).
+- Without **routes**, your server would only have one single response for all requests. Routes let you organize and access different parts of your service.
+
+---
+
+✅ **Summary:**
+
+- **Ports** = Numbers that identify which service on a computer should handle a request.
+- **Routes** = Paths inside a web server that tell _what specific function/data_ to serve.
+- Together, they allow many services to run on the same computer and expose multiple functionalities.
+
+---
+
+## Ques: it is said that when any service runs in our computer it is served at a specific port: what does this mean? explain with the analogy of a restaurant?
+
+## Ans: Services and Ports as a Restaurant
+
+Imagine your **computer is like a big restaurant building**.
+
+- The **restaurant** = your computer (the machine).
+- The **customers** = people (other computers) who want to use your services.
+- The **counters (service windows)** = ports.
+- The **chefs/kitchen behind each counter** = the specific program/service running (like a web server, database, etc.).
+
+---
+
+## 🔹 What does "a service runs at a specific port" mean?
+
+When a customer walks into the restaurant, they don’t just shout their order to the whole building.
+Instead, they go to a **specific counter** that serves a specific purpose.
+
+👉 Examples:
+
+- Counter **80** → Only serves normal food (HTTP web pages).
+- Counter **443** → Only serves secure food (HTTPS).
+- Counter **3306** → Only serves database queries.
+- Counter **22** → Only serves remote login requests (SSH).
+
+Each counter (port) is dedicated to a **particular service**.
+If a service (like your web server) is said to “run at port 8000,” that means:
+
+- The web server is **waiting at counter 8000**, ready to take and serve customer requests.
+
+---
+
+## 🔹 Why do we need ports?
+
+Imagine a restaurant without counters.
+Customers come in, but they wouldn’t know **where to go** for pizza, where for coffee, or where to pay bills. It would be chaos!
+
+Similarly, without ports:
+
+- Your computer wouldn’t know whether incoming data is for the **web server**, the **database**, or some other service.
+
+---
+
+✅ **Summary with analogy**:
+
+- **Computer** = Restaurant building.
+- **Port** = Service counter/window inside the restaurant.
+- **Service running on a port** = A chef behind that counter cooking specific food.
+- Customers (other computers) know exactly **which counter (port number)** to go to for the service they want.
+
+---

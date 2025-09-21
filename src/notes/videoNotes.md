@@ -9,4 +9,5 @@
 
 - Building mega backend project 2:
   - Imp life lesson: 00:00:00 to 00:28:12
-  - class start from: 00:28:15 => start from here tomorrow
+  - docker fundamentals: 00:30:12 to 00:43:30
+  - async handler explanation: 00:47:00 to
