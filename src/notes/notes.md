@@ -1,4 +1,4 @@
 - in express, for validation, follow 3 steps:
   - prepare custom validations
   - prepare a middleware for it
-  - use the middleware in route to perform validations in the middleware step.
+  - use the middleware in route to perform validations in the middleware step
