@@ -4,4 +4,5 @@
 
 - This project is under development.
 - `Data modeling` part is done.
+- adding custom hooks => `done`
 - next is adding data type validation. => `done`
