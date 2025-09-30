@@ -265,3 +265,38 @@ Similarly, without ports:
 - Customers (other computers) know exactly **which counter (port number)** to go to for the service they want.
 
 ---
+
+## Ques: in my express middleware, if i use const errors = validationResult(req); with express-validator, what will be the value and datatype of errors?
+
+## Ans: When using `const errors = validationResult(req);` with `express-validator`, the `errors` variable will be an instance of a `Result` object.
+
+- Datatype: Result object (a custom object provided by express-validator).
+- Value: The Result object contains methods to inspect the validation results. It does not directly contain an array of errors, but rather provides methods to extract them.
+
+> Key methods of the Result object:
+
+- isEmpty(): Returns a boolean indicating whether there are any validation errors.
+- array(): Returns an array of validation errors. Each error in the array is an object with properties like msg (error message), param (the name of the field that caused the error), value (the value of the field), and location (where the parameter originated, e.g., body, query, params).
+- mapped(): Returns an object where keys are the parameter names and values are the first error associated with that parameter.
+
+> Example usage:
+
+```javascript
+const { validationResult } = require("express-validator");
+
+// ... in your middleware
+const errors = validationResult(req);
+
+if (!errors.isEmpty()) {
+  // There are validation errors
+  const extractedErrors = errors.array(); // Get an array of errors
+  // Or, for a mapped object:
+  // const mappedErrors = errors.mapped();
+
+  // You can then send these errors back to the client
+  return res.status(400).json({ errors: extractedErrors });
+}
+
+// No validation errors, proceed with the request
+next();
+```
