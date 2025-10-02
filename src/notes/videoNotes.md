@@ -11,3 +11,4 @@
   - Imp life lesson: 00:00:00 to 00:28:12
   - docker fundamentals: 00:30:12 to 00:43:30
   - async handler explanation: 00:47:00 to
+  - continue from here: 01:58:58
