@@ -2,3 +2,4 @@
   - prepare custom validations
   - prepare a middleware for it
   - use the middleware in route to perform validations in the middleware step
+    - in routes, instead of passing a reference of validation method, call the method immediately there.
