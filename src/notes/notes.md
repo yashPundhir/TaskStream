@@ -2,4 +2,4 @@
   - prepare custom validations
   - prepare a middleware for it
   - use the middleware in route to perform validations in the middleware step
-    - in routes, instead of passing a reference of validation method, call the method immediately there.
+    - in routes, instead of passing a reference of validation method, call the method immediately there bcz this method does not call `next()` so if we don't call it, then the reference won't gets transferred to the middleware.
