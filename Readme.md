@@ -7,4 +7,4 @@
 - adding custom hooks => `done`
 - next is adding data type validation => `done`
 - write auth controller => `todo`
-- integrate validations with controllers => `done`
+- integrate validations with controllers => `todo`
